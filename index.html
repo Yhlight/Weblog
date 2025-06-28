@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荧火光</title>
+    <link rel="shortcut icon" href="./Image/favicon.ico">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/note.css">
+    <link rel="stylesheet" href="./CSS/note_detail.css">
+    <link rel="stylesheet" href="./CSS/excerpt.css">
+    <link rel="stylesheet" href="./CSS/project.css">
+    <link rel="stylesheet" href="./CSS/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>荧火光</span>
+        </div>
+        <div class="nav-links">
+            <a href="#main" class="active">首页</a>
+            <a href="#note">笔记</a>
+            <a href="#excerpt">摘录</a>
+            <a href="#project">项目</a>
+            <a href="#about">关于</a>
+            <a href="#message">留言</a>
+            <button class="setting"><i class="fas fa-gear"></i></button>
+            <div class="setting-page hide">
+                <div class="theme" style="color: #B6D7E6; border: 1px #B6D7E6 solid;">
+                    <div class="color-block" style="background-color: #B6D7E6;"></div>
+                    <div>天空蓝</div>
+                    <button class="color-button" style="border: 1px #B6D7E6 solid;">切换主题</button>
+                </div>
+                <div class="theme" style="color: rgb(255, 192, 203); border: 1px rgb(255, 192, 203) solid;">
+                    <div class="color-block" style="background-color: rgb(255, 192, 203);"></div>
+                    <div>樱花粉</div>
+                    <button class="color-button" style="border: 1px rgb(255, 192, 203) solid;">切换主题</button>
+                </div>
+                <div class="theme" style="color: #B18BE4; border: 1px #B18BE4 solid;">
+                    <div class="color-block" style="background-color: #B18BE4;"></div>
+                    <div>紫罗兰</div>
+                    <button class="color-button" style="border: 1px #B18BE4 solid;">切换主题</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page"></div>
+
+    <footer>
+        <p>© 2025 荧火光 | 光辉追随</p>
+        <p>愿世上的美好，永远闪耀</p>
+        <div class="social-links">
+            <a href="https://github.com/Yhlight" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/511574072" target="_blank"><i class="fab fa-bilibili"></i></a>
+        </div>
+    </footer>
+
+    <script src="./JavaScript/app.js"></script>
+    <script src="./JavaScript/markDown.js"></script>
+    <script src="./JavaScript/indexManager.js"></script>
+    <script src="./JavaScript/pageManager.js"></script>
+    <script src="./JavaScript/mainManager.js"></script>
+    <script src="./JavaScript/noteManager.js"></script>
+    <script src="./JavaScript/excerptManager.js"></script>
+    <script src="./JavaScript/projectManager.js"></script>
+    <script>
+        YhLightApp.init();
+        alert(`个人博客的制作流程在笔记第三页，你可以通过主页下面的笔记栏快速跳转，当然，你也可以访问Github来查看制作流程
+https://github.com/Yhlight/Weblog/blob/main/制作流程.md`);
+    </script>
+</body>
+
+</html>

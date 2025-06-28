@@ -1,0 +1,52 @@
+<div class="note-detail-contain">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="note-details fade-in">
+        <div class="note-title">GDScript-面向对象-命名类</div>
+        <div class="note-time">2025-6-11</div>
+
+        <section>
+            <h2>命名类</h2>
+            <p>命名类.gd</p>
+            <pre class="code-block">
+                    <code>
+# 使用class_name命名本文件
+class_name YhLight
+
+var yhlight: Dictionary[String, int] = {
+	"荧火light": 18,
+	"幻来听": 18
+}
+
+func show() -> void:
+	var arr: Array[String]
+	
+	for key in yhlight:
+		arr.push_back(key)
+	
+	print(arr)
+                    </code>
+                </pre>
+        </section>
+
+        <section>
+            <h2>命名类测试</h2>
+            <p>命名类测试.gd</p>
+            <pre class="code-block">
+                    <code>
+extends Node
+
+# 命名类也不允许使用const创建对象
+var yhLight: YhLight = YhLight.new()
+
+func _ready() -> void:
+	print(yhLight.yhlight)
+	
+	yhLight.show()
+                    </code>
+                </pre>
+        </section>
+
+    </div>
+</div>

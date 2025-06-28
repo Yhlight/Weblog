@@ -1,0 +1,298 @@
+.main-contain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.main-contain .info-sidebar {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    height: 420px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-contain .info-sidebar .avatar-info {
+    text-align: center;
+}
+
+.main-contain .avatar-info .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-blue);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-contain .avatar-info .name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.main-contain .avatar-info .signature {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.main-contain .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-contain .stats .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-contain .stat-item:last-child {
+    border-bottom: none;
+}
+
+.main-contain .stat-item .label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.main-contain .stat-item .count {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.main-contain .center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-contain .activity-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.main-contain .activity-card .card-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-contain .activity-card .card-title i {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+}
+
+.main-contain .activity-card .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-contain .activity-list .activity-item {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--background-light);
+    box-shadow: inset 0 0 0 1px var(--border-color);
+}
+
+.main-contain .activity-item .activity-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: var(--light-blue);
+    color: var(--dark-blue);
+}
+
+.main-contain .activity-item .activity-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.main-contain .activity-item .activity-content p {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.main-contain .activity-item .activity-time {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    margin-top: 5px;
+}
+
+.main-contain .display-project-card,
+.display-note-card,
+.display-excerpt-card {
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 15px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.main-contain .display-note-card:hover,
+.display-excerpt-card:hover,
+.display-project-card:hover {
+    transform: translateY(-5px);
+}
+
+.main-contain .display-project-card h3,
+.display-note-card h3,
+.display-excerpt-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary-blue);
+}
+
+.main-contain .display-project-card p,
+.display-note-card p {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.main-contain .display-project-card .project-stats {
+    display: flex;
+    gap: 12px;
+    justify-content: right;
+}
+
+.main-contain .display-project-card .project-stats span {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+
+.main-contain .display-project-card a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-contain .display-note-card .time,
+.display-excerpt-card .time {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+
+.main-contain .display-excerpt-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+.main-contain .memo-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.main-contain .memo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-contain .memo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--background-light);
+    box-shadow: inset 0 0 0 1px var(--border-color);
+}
+
+.main-contain .memo-item.completed span {
+    text-decoration: line-through;
+    color: var(--text-dark);
+}
+
+.main-contain .content-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.main-contain .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+    opacity: 0.2;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.main-contain .content-card {
+    position: relative;
+    z-index: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.main-contain .tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.main-contain .tab-button {
+    padding: 8px 15px;
+    background: var(--light-blue);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.main-contain .tab-button.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.main-contain .tab-content .tab-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.main-contain .tab-content .tab-card.double-grid-display {
+    grid-template-columns: repeat(2, 1fr);
+}

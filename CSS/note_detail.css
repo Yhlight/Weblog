@@ -1,0 +1,155 @@
+.note-detail-contain {
+    display: flex;
+    padding-top: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.note-detail-contain * {
+    margin: 10px 0;
+}
+
+.note-detail-contain .close-button {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: 0.3s all linear;
+}
+
+.note-detail-contain .close-button:hover {
+    background-color: white;
+}
+
+.note-detail-contain .close-button i {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+.note-detail-contain .close-button i:hover {
+    color: var(--dark-blue);
+}
+
+.note-detail-contain .note-details {
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    width: 100%;
+    overflow: hidden;
+}
+
+.note-detail-contain .note-title {
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.note-detail-contain .note-time {
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.note-detail-contain section {
+    margin-bottom: 20px;
+}
+
+.note-detail-contain h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.note-detail-contain h1 {
+    font-size: 1.8rem;
+}
+
+.note-detail-contain h2 {
+    font-size: 1.6rem;
+}
+
+.note-detail-contain h3 {
+    font-size: 1.4rem;
+}
+
+.note-detail-contain h4 {
+    font-size: 1.3rem;
+}
+
+.note-detail-contain h5 {
+    font-size: 1.2rem;
+}
+
+.note-detail-contain h6 {
+    font-size: 1.1rem;
+}
+
+.note-detail-contain p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.note-detail-contain .code-block {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.note-detail-contain .code-block code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #333;
+    font-size: 0.95rem;
+    display: block;
+}
+
+.note-detail-contain .copy-button {
+    padding: 5px 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.8rem;
+}
+
+.note-detail-contain .copy-button:hover {
+    background-color: var(--dark-blue);
+}
+
+.note-detail-contain img {
+    width: 100%;
+    height: auto;
+}
+
+.note-detail-contain blockquote {
+    border-radius: 7px;
+    border: 2px var(--dark-blue) solid;
+    padding: 5px;
+}

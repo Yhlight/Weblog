@@ -1,0 +1,34 @@
+.about-contain {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+.about-contain .info {
+    width: 85%;
+    color: var(--dark-blue);
+    text-align: center;
+    font-size: 3rem;
+}
+
+.about-contain .info:nth-child(2n + 1) {
+    align-self: flex-start;
+}
+
+.about-contain .info:nth-child(2n) {
+    align-self: flex-end;
+}
+
+.about-contain .maker-info {
+    align-self: center;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.about-contain ul li::marker {
+    color: var(--dark-blue);
+    font-size: 1.45rem;
+}

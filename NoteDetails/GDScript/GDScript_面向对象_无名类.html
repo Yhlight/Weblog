@@ -1,0 +1,76 @@
+<div class="note-detail-contain">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="note-details fade-in">
+        <div class="note-title">GDScript-面向对象-无名类</div>
+        <div class="note-time">2025-6-11</div>
+
+        <section>
+            <h2>无名类基础</h2>
+            <p>无名类继承.gd</p>
+            <pre class="code-block">
+                    <code>
+var dic: Dictionary[String, int] = {
+	"荧火light": 18,
+	"没睡醒的扬": 19
+}
+                    </code>
+                </pre>
+        </section>
+
+        <section>
+            <h2>无名类</h2>
+            <p>无名类.gd</p>
+            <pre class="code-block">
+                    <code>
+# 继承
+extends "res://gdscript/面向对象/类/无名类/无名类继承.gd"
+
+enum yhlight {
+	YHLIGHT,
+	SHUIYANG,
+	HUANLAITING
+}
+
+func show() -> void:
+	var arr: Array[String]
+	
+	for key in yhlight:
+		arr.push_back(key)
+	
+	print(arr)
+                    </code>
+                </pre>
+        </section>
+
+        <section>
+            <h2>无名类测试</h2>
+            <p>无名类测试.gd</p>
+            <pre class="code-block">
+                    <code>
+extends Node
+
+# 实际上，每一个gd文件都是一个不具有名字的无名类
+# 开发者可以使用extends关键字导入gd文件
+# GDScript不允许多重继承
+
+# 将类作为资源进行导入
+const YhLightStudio: Resource = preload("res://gdscript/面向对象/类/无名类/无名类.gd")
+
+func _ready() -> void:
+	# 不允许使用const创建对象
+	var yhLight: YhLightStudio = YhLightStudio.new()
+	
+	# 访问类的属性
+	print(yhLight.yhlight.YHLIGHT)
+	print(yhLight.dic)
+	
+	# 调用类的方法
+	yhLight.show()
+                    </code>
+                </pre>
+        </section>
+
+    </div>
+</div>

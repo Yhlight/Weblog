@@ -1,0 +1,285 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-变量与运算符</div>
+		<div class="note-time">2025-6-10</div>
+
+		<section>
+			<h2>基本数据类型与变量</h2>
+			<p>
+				基本数据类型与变量.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+# 在GDScript中有四种基本数据类型
+# 整型 int
+# 浮点型 float
+# 布尔型 bool
+# 字符串 String
+
+# 全局变量
+# 使用var声明变量，并在变量名后显式指明数据类型
+# 整型
+var num_int: int = 10
+
+# 浮点型
+var num_float: float = 15.5
+
+# 布尔类型
+var is_flag: bool = true
+
+# 字符串类型
+var string: String = "HelloWorld"
+
+# 在GDScript中，除了类名使用大驼峰命名法
+# 类对象名称使用小驼峰命名法外，其他皆使用蛇形命名法
+
+func _ready() -> void:
+	# 局部变量
+	var num: int = 1145
+	
+	# prints函数输出多个内容时，会使用空格分隔内容
+	prints(num_int, num_float, is_flag, string, num)
+                    </code>
+                </pre>
+		</section>
+
+		<section>
+			<h2>常量</h2>
+			<p>常量.gd</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+# 使用const关键字声明常量
+# 常量名称应该全部大写，且作为全局变量
+const BASE_HEALTH: int = 100
+
+func _ready() -> void:
+	print(BASE_HEALTH)
+                    </code>
+                </pre>
+		</section>
+
+		<section>
+			<h2>运算符</h2>
+			<p>运算符.gd</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+func arithmetic_operators() -> void:
+	var num: int = 20
+	var num2: int = 10
+	var result: int = 0
+	
+	# 算术运算符
+	# + - * / % **
+	
+	# 加法运算符 +
+	result = num + num2
+	print(result)
+	
+	# 减法运算符 -
+	result = num - num2
+	print(result)
+	
+	# 乘法运算符 *
+	result = num * num2
+	print(result)
+	
+	# 除法运算符 /
+	result = num / num2
+	print(result)
+	
+	# 取模运算符 %
+	result = num % num2
+	print(result)
+	
+	# 次方运算符 **
+	result = num ** 5
+	print(result)
+	
+func comparison_operators() -> void:
+	var num: int = 20
+	var num2: int = 40
+	
+	# 比较运算符
+	# == > >= < <= !=
+	
+	# 是否等于 ==
+	print(num == num2)
+	
+	# 是否大于 >
+	print(num > num2)
+	
+	# 是否大于等于 >=
+	print(num >= num2)
+	
+	# 是否小于 <
+	print(num < num2)
+	
+	# 是否小于等于 <=
+	print(num <= num2)
+	
+	# 是否不等于 !=
+	print(num != num2)
+
+func logical_operators() -> void:
+	# 逻辑运算符
+	# and or not
+	
+	var is_flag: bool = true
+	var is_greater_than_zero: bool = false
+	
+	# 布尔与(&&)  ->  and
+	if (is_flag and is_greater_than_zero):
+		print("is_flag和is_greater_than_zero同时为true")
+		
+	# 布尔或(||)  ->  or
+	elif (is_flag or is_greater_than_zero):
+		print("is_flag和is_greater_than_zero其一为true")
+		
+	else:
+		print("is_flag和is_greater_than_zero皆为false")
+	
+	# 反逻辑(!)  ->  not
+	print(not is_flag)
+
+func bitwise_operators() -> void:
+	var num: int = 10
+	var num2: int = 20
+	var result: int = 0
+	
+	# 位运算符
+	# << >> & | ^ ~
+	
+	# 左移运算符 <<
+	result = num << 5
+	print(result)
+	
+	# 右移运算符 >>
+	result = num >> 3
+	print(result)
+	
+	# 按位与 &
+	result = num & num2
+	print(result)
+	
+	# 按位或 |
+	result = num | num2
+	print(result)
+	
+	# 按位异或 ^
+	result = num ^ num2
+	print(result)
+	
+	# 按位取反 ~
+	result = ~num
+	print(result)
+
+func miscellaneous_operators() -> void:
+	var num: int = 1145
+	var arr: Array[int] = [1145, 1280, 1090, 4524]
+	
+	# 三目操作符
+	# 真表达式 if 条件 else 假表达式
+	print("num > 10") if num > 10 else print("num < 10")
+
+	# 包含 in
+	print(num in arr)
+	
+	# 类型检查 is
+	print("123" is String)
+	
+	# 下标引用操作符 [index]
+	print(arr[0])
+	
+func assignment_operators() -> void:
+	var num: int = 20
+	var num2: int = 40
+	var result: int = 0
+	
+	# 赋值运算符
+	# = += -= *= /= %= **= &= |= ^= <<= >>=
+	
+	# 执行赋值运算 =
+	num = num2
+	print(num)
+	
+	# 执行加法运算 +=
+	result += num
+	print(result)
+	
+	# 执行减法运算 -=
+	result -= num
+	print(result)
+	
+	# 执行乘法运算 *=
+	result *= num
+	print(result)
+	
+	# 执行除法运算 /=
+	result /= num
+	print(result)
+	
+	# 执行取模运算 %=
+	result %= num
+	print(result)
+	
+	# 执行乘方运算 **=
+	result **= 5
+	print(result)
+	
+	# 执行按位与运算 &=
+	result &= 5
+	print(result)
+	
+	# 执行按位或运算 |=
+	result |= 5
+	print(result)
+	
+	# 执行按位异或运算 ^=
+	result ^= 5
+	print(result)
+	
+	# 执行左移运算 <<
+	result <<= 5
+	print(result)
+	
+	# 执行右移运算 >>
+	result >>= 5
+	print(result)
+	
+func _ready() -> void:
+	arithmetic_operators()
+	
+	print()
+	
+	comparison_operators()
+	
+	print()
+	
+	logical_operators()
+	
+	print()
+	
+	bitwise_operators()
+	
+	print()
+	
+	miscellaneous_operators()
+	
+	print()
+	
+	assignment_operators()
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>

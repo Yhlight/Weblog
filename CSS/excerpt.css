@@ -1,0 +1,63 @@
+.excerpt-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    padding: 20px;
+}
+
+.excerpt-contain .excerpt-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.excerpt-contain .excerpt-header {
+    height: 10px;
+    width: 78%;
+    position: absolute;
+    top: 0;
+}
+
+.excerpt-contain .excerpt-card:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+}
+
+.excerpt-contain .excerpt-card:nth-child(odd) .excerpt-header {
+    left: 0;
+    background: linear-gradient(90deg, var(--dark-blue), rgba(255, 255, 255, 0));
+    border-top-left-radius: 12px;
+}
+
+.excerpt-contain .excerpt-card:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+.excerpt-contain .excerpt-card:nth-child(even) .excerpt-header {
+    right: 0;
+    background: linear-gradient(-90deg, var(--dark-blue), rgba(255, 255, 255, 0));
+    border-top-right-radius: 12px;
+}
+
+.excerpt-contain .excerpt-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 25px;
+}
+
+.excerpt-contain .excerpt-time {
+    font-size: 0.75rem;
+    color: var(--primary-blue);
+    margin-top: 8px;
+}

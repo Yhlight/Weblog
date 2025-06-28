@@ -1,0 +1,121 @@
+[
+    {
+        "id": "gdscript-begin",
+        "title": "GDScript_初见",
+        "time": "2025-06-07",
+        "preface": "GDScript是Godot引擎提供的官方语言，是一门优秀的语言，提供了许多重要的特征与功能",
+        "href": "./NoteDetails/GDScript/GDScript_初见.html"
+    },
+    {
+        "id": "gdscript-variable-operator",
+        "title": "GDScript_变量与运算符",
+        "time": "2025-06-07",
+        "preface": "学习使用var创建变量并注明类型，以及常见运算符运算",
+        "href": "./NoteDetails/GDScript/GDScript_变量与运算符.html"
+    },
+    {
+        "id": "gdscript-chioce-and-loop",
+        "title": "GDScript_选择结构与循环结构",
+        "time": "2025-06-08",
+        "preface": "学习编程中的基本结构-选择结构与循环结构",
+        "href": "./NoteDetails/GDScript/GDScript_选择结构与循环结构.html"
+    },
+    {
+        "id": "gdscript-function",
+        "title": "GDScript_函数",
+        "time": "2025-06-08",
+        "preface": "学会使用func关键字来创建函数",
+        "href": "./NoteDetails/GDScript/GDScript_函数.html"
+    },
+    {
+        "id": "gdscript-array",
+        "title": "GDScript_数组与常用方法",
+        "time": "2025-06-08",
+        "preface": "学习GDScript中的第一种数据结构，数组",
+        "href": "./NoteDetails/GDScript/GDScript_数组与常用方法.html"
+    },
+    {
+        "id": "gdscript-dictionary",
+        "title": "GDScript_字典与常用方法",
+        "time": "2025-06-08",
+        "preface": "学习GDScript中的第二种数据结构，字典",
+        "href": "./NoteDetails/GDScript/GDScript_字典与常用方法.html"
+    },
+    {
+        "id": "gdscript-for-in",
+        "title": "GDScript_for-in",
+        "time": "2025-06-09",
+        "preface": "学习如何在for循环中合理使用in运算符",
+        "href": "./NoteDetails/GDScript/GDScript_for-in.html"
+    },
+    {
+        "id": "gdscript-enum",
+        "title": "GDScript_枚举",
+        "time": "2025-06-09",
+        "preface": "学习如何使用枚举快速创建一连串的常量",
+        "href": "./NoteDetails/GDScript/GDScript_枚举.html"
+    },
+    {
+        "id": "gdscript-oop-anonymous",
+        "title": "GDScript_面向对象_无名类",
+        "time": "2025-06-09",
+        "preface": "GDScript中匿名类的概念和应用。",
+        "href": "./NoteDetails/GDScript/GDScript_面向对象_无名类.html"
+    },
+    {
+        "id": "gdscript-oop-named",
+        "title": "GDScript_面向对象_命名类",
+        "time": "2025-06-09",
+        "preface": "学习GDScript中的面向对象编程，学习如何将.gd文件作为资源载入，并依此创建对象",
+        "href": "./NoteDetails/GDScript/GDScript_面向对象_命名类.html"
+    },
+    {
+        "id": "cpp-helloworld",
+        "title": "C++_HelloWorld",
+        "time": "2025-06-19",
+        "preface": "此教程不适用于没有学习过静态语法规范的编程语言的人士",
+        "href": "./NoteDetails/C++/C++_HelloWorld.md"
+    },
+    {
+        "id": "cpp-variable",
+        "title": "C++_变量与数据类型",
+        "time": "2025-06-19",
+        "preface": "认识并创建不同数据类型的变量",
+        "href": "./NoteDetails/C++/C++_变量与数据类型.md"
+    },
+    {
+        "id": "cpp-input-operator",
+        "title": "C++_数据的输入与常见运算符运算",
+        "time": "2025-06-19",
+        "preface": "学习最基础的控制台输入，以及常见的运算符运算",
+        "href": "./NoteDetails/C++/C++_数据的输入与常见运算符运算.md"
+    },
+    {
+        "id": "cpp-chioce-and-loop",
+        "title": "C++_选择结构与循环结构",
+        "time": "2025-06-19",
+        "preface": "学习编程中两种基本结构-选择结构与循环结构",
+        "href": "./NoteDetails/C++/C++_选择结构与循环结构.md"
+    },
+    {
+        "id": "example-markdown",
+        "title": "示例Markdown文件",
+        "time": "2025-06-10",
+        "preface": "markdown文件解析测试",
+        "href": "./NoteDetails/example.md"
+    },
+    {
+        "id": "cpp-basic-advanced",
+        "title": "C++基础进阶笔记",
+        "time": "2025-06-10",
+        "preface": "测试大型.md文件的性能问题",
+        "href": "./NoteDetails/C++基础进阶笔记.md"
+    },
+    {
+        "id": "blog-building",
+        "title": "博客的搭建",
+        "time": "2025-06-28",
+        "preface": "博客的制作流程",
+        "href": "./制作流程.md"
+    }
+]

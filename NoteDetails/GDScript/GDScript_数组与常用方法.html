@@ -1,0 +1,260 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-数组与常用方法</div>
+		<div class="note-time">2025-6-10</div>
+
+		<section>
+			<h2>数组</h2>
+			<p>
+				数组.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+var arr: Array[int] = [1,2,3,4,5,6,7]
+var arr_str: Array[String] = ["荧火light","睡扬","幻来听"]
+var arr_arr: Array[Array] = [[1,2,3],[4,5,6],[7,8,9]]
+
+func _ready() -> void:
+	for i in arr:
+		print(i)
+		
+	print()
+		
+	for i in arr_str:
+		print(i)
+		
+	print()
+	
+	# 统一二维数组的遍历方式
+	for i in arr_arr.size():
+		for j in arr_arr[i].size():
+			print(arr_arr[i][j])
+	
+	print()
+	
+	for i in arr_arr:
+		for j in i:
+			print(j)
+			
+	# 其他的遍历方式全禁用
+                    </code>
+                </pre>
+		</section>
+
+		<section>
+			<h2>数组常用方法</h2>
+			<p>数组常用方法.gd</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+# GDScript中的数组具有动态特征，能够动态调整数组大小以适应元素的的数量
+
+func _ready() -> void:
+	var arr: Array[int] = [1, 2, 3]
+	var arr2: Array[int] = [1145, 19810, 114514, 19810, 54333, 12, 13, 14, 15, 16, 17]
+	
+	### 增
+	# 追加元素
+	# void append(value: Variant)
+	arr.append(4)
+	print(arr)
+	
+	# 追加数组
+	# void append_array(array: Array)
+	arr.append_array([1, 2, 3])
+	print(arr)
+	
+	# 追加元素至数组末端
+	# void push_back(value: Variant)
+	arr.push_back(1145)
+	print(arr)
+	
+	# 追加元素至数组前端
+	# void push_front(value: Variant)
+	arr.push_front(19810)
+	print(arr)
+	
+	# 在索引为position处插入元素
+	# int insert(position: int, value: Variant)
+	arr.insert(arr[1], 0)
+	print(arr)
+	
+	### 删
+	# 移除并返回数组尾元素
+	# Variant pop_back()
+	# printt()函数输出多个内容时，以制表符分隔
+	printt(arr2.pop_back(), arr2)
+	
+	# 移除并返回数组首元素
+	# Variant pop_front()
+	printt(arr2.pop_front(), arr2)
+	
+	# 删除第一个匹配的元素
+	# void erase(value: Variant)
+	arr2.erase(19810)
+	print(arr2)
+	
+	# 移除数组索引为position的元素
+	# void remove_at(position: int)
+	arr2.remove_at(4)
+	print(arr2)
+	
+	# 移除并返回数组索引为position的元素
+	# Variant pop_at(position: int)
+	printt(arr2.pop_at(5), arr2)
+	
+	# 清空数组
+	# void clear()
+	arr2.clear()
+	print(arr2)
+	arr2 = [1145, 19810, 114514, 19810, 54333, 12, 13, 14, 15, 16, 17]
+	
+	### 改
+	# 修改索引为index的数组元素
+	# void set(index: int, value: Variant)
+	arr.set(1, 0)
+	print(arr)
+	
+	# 将数组中的所有元素替换成value
+	# void fill(value: Variant)
+	arr.fill(1145)
+	print(arr)
+	arr = [1, 2, 3]
+	
+	# 将另一个数组赋给本数组
+	# void assign(array: Array)
+	arr.assign(arr2)
+	print(arr)
+	
+	# 随机打乱数组
+	# void shuffle()
+	arr2.shuffle()
+	print(arr2)
+	
+	# 反转数组
+	# void reverse()
+	arr2.reverse()
+	print(arr2)
+	
+	# 数组的排序
+	# void sort()
+	var arr_sort: Array[int] = [0, 10, 9, 1, 8, 2, 7, 3, 6, 4, 5, 5]
+	arr_sort.sort()
+	print(arr_sort)
+	
+	### 查
+	# 返回数组的元素个数
+	# int size()
+	var arr_size: Array[int] = [1, 2, 3, 4 ,5]
+	print(arr_size.size())
+	
+	# 返回数组的首元素
+	# Variant front()
+	print(arr.front())
+	
+	# 获取数组的尾元素
+	# Variant back()
+	print(arr.back())
+	
+	# 返回数组中最大的元素
+	# Variant max()
+	print(arr.max())
+	
+	# 返回数组中最小的元素
+	# Variant min()
+	print(arr.min())
+	
+	# 获取索引为index的元素
+	# Variant get(index: int)
+	print(arr2.get(5))
+	
+	# 随机返回数组中的元素
+	# Variant pick_random()
+	print(arr2.pick_random())
+	
+	# 数组是否包含value
+	# bool has(value: Variant)
+	print(arr2.has(19810))
+	
+	# 返回匹配value值的元素个数
+	# int count(value: Variant)
+	print(arr2.count(19810))
+	
+	# 返回元素第一次出现的索引
+	# int find(what: Variant, from: int = 0)
+	# 可以填入一int值决定从哪开始查找
+	# 若查找不到此元素，则返回-1
+	print(arr2.find(19810))
+	
+	# 返回元素最后一次出现的索引
+	# int rfind(what: Variant, from: int = -1)
+	# 可以填入一int值决定从哪开始查找
+	# 若查找不到此元素，则返回-1
+	print(arr2.rfind(19810))
+	
+	# 二分查找
+	# int bsearch(value: Variant, before: bool = true)
+	# 执行二分查找前要先进行排序
+	arr2.sort()
+	print(arr2.bsearch(19810))
+	
+	# 除此之外，二分查找可以填入一个布尔值
+	# 此布尔值决定二分查找查找元素第一次出现的位置还是最后一次出现的位置
+	# 查找元素最后出现的位置
+	print(arr2.bsearch(19810, false))
+	
+	# 数组是否为空
+	# bool is_empty()
+	print(arr2.is_empty())
+	
+	### 其他操作
+	# 重新设置数组的大小
+	# int resize(size: int)
+	var arr_resize: Array[int]
+	arr_resize.resize(10)
+	arr_resize.fill(1145)
+	print(arr_resize)
+	
+	# 数组的切片
+	# Array slice(begin: int, end: int = 0x7FFFFFFF, step: int = 1, deep: bool = false)
+	# 切片，顾名思义，截取数组中的某一部分
+	# 其四个形参为 起始索引 结束索引 步长 深拷贝
+	var arr_slice: Array[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	var arr_slice_new: Array[int] = arr_slice.slice(2, arr_slice.size() - 2)
+	print(arr_slice_new)
+	
+	# 返回本数组的副本
+	# Array duplicate(deep: bool = false)
+	# 默认情况下为浅拷贝，浅拷贝的情况下
+	# 嵌套的数组和字典与原数组共享，若数组副本发生变化，将影响原数组
+	# 可以填入布尔值，执行深拷贝，深拷贝的数组副本完全独立与原数组
+	
+	var arr_str: Array[Array] = [["荧火light", "没睡醒的扬"], ["幻来听", "冬暮"]]
+	var arr_copy: Array[Array] = arr_str.duplicate()
+	var arr_copy_deep: Array[Array] = arr_str.duplicate(true)
+	print(arr_str)
+	arr_copy[0][0] = "yinghuolight"
+	arr_copy_deep[1][0] = "樱花"
+	print(arr_str)
+	
+	# 使数组变为只读
+	# void make_read_only()
+	# 保护数组的一种方式，使用const也创建的数组也为只读
+	# 只读的数组无法被修改
+	var arr_to_const: Array[int] = [6, 7, 8, 9, 10]
+	arr_to_const.make_read_only()
+	# arr_to_const[0] = 1145  # 错误
+	const arr_const: Array[int] = [1, 2, 3, 4, 5]
+	# arr_const[0] = 1145  # 错误
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>

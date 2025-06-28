@@ -1,0 +1,35 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-函数</div>
+		<div class="note-time">2025-6-10</div>
+
+		<section>
+			<h2>函数</h2>
+			<p>
+				函数.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+func add(x: int, y: int) -> int:
+	return x + y;
+	
+# 函数形参可以具有默认值
+func Test(test: String = "Test") -> void:
+	# pass用来占位，防止报错，pass表示什么都不做
+	pass
+
+func _ready() -> void:
+	var num: int = 20
+	var num2: int = 40
+	print(add(num, num2))
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>

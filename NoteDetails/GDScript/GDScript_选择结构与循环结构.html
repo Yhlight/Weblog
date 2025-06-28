@@ -1,0 +1,94 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-选择结构与循环结构</div>
+		<div class="note-time">2025-6-10</div>
+
+		<section>
+			<h2>选择结构</h2>
+			<p>
+				选择结构.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+func _ready() -> void:
+	var sorce: int = 80
+	var is_bad: bool = true
+	
+	if(sorce >= 80 and not is_bad):
+		print("你是一个优秀的好学生")
+	elif (sorce >= 80 and is_bad):
+		print("你是一个坏学生，但不可否认，你的确优秀")
+	elif (sorce >= 60 and not is_bad):
+		print("尽管你成绩一般，但你是一个好学生")
+	elif (sorce >= 60 and is_bad):
+		print("不可否认，你是一个坏学生")
+	elif (not is_bad):
+		print("只要你不是坏学生就好")
+	else:
+		print("无可救药的家伙")
+                    </code>
+                </pre>
+		</section>
+
+		<section>
+			<h2>循环结构</h2>
+			<p>循环结构.gd</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+func _ready() -> void:
+	var i: int = 0
+	while(i < 10):
+		
+		# 缩进式最大的问题就是难以阅读，因此要适当分隔代码
+		if(i == 5):
+			break
+		
+		print("HelloWorld")
+		i += 1
+
+	print()
+
+	for index in 20:
+		print("HelloWorld")
+		
+	print()
+
+	# range是一个函数，它有三个可选值
+	# 起始位置 终止位置 步长(一次移动多少单位)
+	# 若只填入一个值，则表示终止位置
+	# 若填入两个值，则表示起始位置和终止位置
+	# 若填入三个值，则表示起始位置和终止位置和步长
+	# 这里会转换成C++代码以供理解
+	
+	# for(int index = 0; index < 10; index++)
+	for index in range(10):
+		
+		if(index == 7):
+			continue
+		
+		print(index)
+		
+	print()
+		
+	# for(int index = 5; index < 10; index++)
+	for index in range(5, 10):
+		print(index)
+	
+	print()
+	
+	# for(int index = 2; index < 10; index += 2)
+	for index in range(2, 10, 2):
+		print(index)
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>

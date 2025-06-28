@@ -1,0 +1,58 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-for循环与in</div>
+		<div class="note-time">2025-6-11</div>
+
+		<section>
+			<h2>for-in</h2>
+			<p>
+				for-in.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+func _ready() -> void:
+	# for循环与常数
+	for i in 3:
+		print(i)
+		
+	print()
+		
+	# for循环与range
+	for i in range(10, 0, -1):
+		print(i)
+		
+	print()
+	
+	# for循环与字符串
+	var str: String = "HelloWorld"
+	for i in str:
+		print(i)
+		
+	print()
+		
+	# for循环与数组
+	var arr: Array[String] = ["荧火light", "没睡醒的扬", "幻来听"]
+	for i in arr:
+		print(i)
+		
+	print()
+		
+	# for循环与字典
+	var dic: Dictionary[String, int] = {
+		"荧火light": 18,
+		"没睡醒的扬": 19,
+		"幻来听": 18
+	}
+	for key in dic:
+		print(dic[key])
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>

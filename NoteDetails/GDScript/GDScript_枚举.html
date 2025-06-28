@@ -1,0 +1,48 @@
+<div class="note-detail-contain">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="note-details fade-in">
+        <div class="note-title">GDScript-枚举</div>
+        <div class="note-time">2025-6-11</div>
+
+        <section>
+            <h2></h2>
+            <p></p>
+            <pre class="code-block">
+                    <code>
+extends Node
+
+# 枚举常用于快速创建一连串的常量
+# 枚举拥有与字典相同的方法
+enum yhlight {
+	YHLIGHT,
+	SHUIYANG,
+	HUANLAITING
+}
+
+enum state {
+	STATE_IDLE = 5,
+	STATE_JUMP = 10,
+	STATE_SHOOT = 15
+}
+
+func _ready() -> void:
+	# 使用枚举名.KEY来访问枚举常量
+	print(yhlight.YHLIGHT)
+	print(state.STATE_IDLE)
+	
+	# for循环与枚举
+	for key in yhlight:
+		printt(key, yhlight[key])
+		
+	print()
+	
+	for key in state:
+		printt(key, state[key])
+                    </code>
+                </pre>
+        </section>
+
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="note-detail-contain">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="note-details fade-in">
+        <div class="note-title">GDScript-初见</div>
+        <div class="note-time">2025-6-9</div>
+
+        <section>
+            <h2>前言</h2>
+            <p class="preface">GDScript是Godot引擎提供的官方语言，是一门优秀的语言，提供了许多重要的特征与功能</p>
+            <p>
+                GDScript同时支持静态和动态编程，由于动态编程潜在很多的问题，若开发者没有接触过动态编程，可能会带来很多不可预测的问题
+                因此教程将全面使用静态编程
+            </p>
+            <p>
+                作为以为开发者，你必须要学会查看官方说明书[GDScript](https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdscript/index.html)
+            </p>
+        </section>
+
+        <section>
+            <h2>注释</h2>
+            <p>
+                GDScript使用#进行注释，为了注释的可见性，您应该在#后面添加空格分隔注释符号与内容
+                并且适当使用箭头指向性注释，而不是使用：
+                我使用的注释相当有讲究，希望在学习过程中能够学会教程中独特的注释方式
+            </p>
+        </section>
+
+        <section>
+            <h2>HelloWorld</h2>
+            <p>GDScript脚本的后缀名为gd，现在创建HelloWorld.gd，作为你的第一个GDScript脚本文件</p>
+            <p>HelloWorld.gd</p>
+            <pre class="code-block">
+                    <code>
+# 继承Node节点，Node节点是GDScirpt所有节点的基类
+extends Node
+
+# 当程序准备好时，将执行_ready()函数
+# func  ->  函数的标识符
+# -> void  ->  函数的返回值类型
+func _ready() -> void:
+    # 打印函数，用于向外部输出内容
+    print("HelloWorld")
+
+# 注意！即使先前说过要全面使用静态编程，但代码无需以分号结尾，这是一个例外的规定
+# 除此之外，代码使用缩进式而不是大括号决定作用范围
+# 因此开发者需要格外注意代码的缩进问题
+                    </code>
+                </pre>
+        </section>
+
+    </div>
+</div>

@@ -1,0 +1,182 @@
+.note-contain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 0;
+    padding: 20px;
+    position: relative;
+}
+
+.note-contain .info-sidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    height: 420px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.note-contain .info-sidebar .avatar-info {
+    text-align: center;
+}
+
+.note-contain .avatar-info .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-blue);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.note-contain .avatar-info .name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.note-contain .avatar-info .signature {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.note-contain .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-contain .stats .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.note-contain .stat-item:last-child {
+    border-bottom: none;
+}
+
+.note-contain .stat-item .label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.note-contain .stat-item .count {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.note-contain .main-content {
+    width: calc(100% - 270px);
+    min-height: 770px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.note-contain .search-box {
+    width: 60%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.note-contain .search-box input {
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 5px var(--border-color) solid;
+    border-radius: 7px;
+    align-self: center;
+}
+
+.note-contain .search-box button {
+    width: 10%;
+    height: 25px;
+    border: 2px var(--border-color) solid;
+    align-self: center;
+    background-color: white;
+    color: var(--text-dark);
+}
+
+.note-contain .note-detail-page {
+    width: 100%;
+}
+
+.note-contain .notes-section {
+    height: 720px;
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: flex-start;
+}
+
+.note-contain .note-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    width: calc(50% - 10px);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-contain .note-card .note-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.note-contain .note-card .preface {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.note-contain .note-card .note-time {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    text-align: right;
+}
+
+.note-contain .buttongroud {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    bottom: 0px;
+}
+
+.note-contain .buttongroud .button {
+    width: 50px;
+    height: 30px;
+    background-color: var(--primary-blue);
+    border: 1px black solid;
+}
+
+.note-contain .pagebuttongroud button {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-blue);
+    border: 1px black solid;
+}
+
+.note-contain .pagebuttongroud button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.note-contain *.hide {
+    display: none;
+    visibility: hidden;
+}

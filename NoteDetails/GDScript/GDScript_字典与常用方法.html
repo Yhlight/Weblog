@@ -1,0 +1,266 @@
+<div class="note-detail-contain">
+	<button class="close-button">
+		<i class="fas fa-times"></i>
+	</button>
+	<div class="note-details fade-in">
+		<div class="note-title">GDScript-字典与常用方法</div>
+		<div class="note-time">2025-6-11</div>
+
+		<section>
+			<h2>字典</h2>
+			<p>
+				字典.gd
+			</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+# 字典，以键值对的方式存储每一个元素，键必须唯一
+var dic: Dictionary[String, String] = {
+	"yinghuolight": "荧火light",
+	"Shuiyang": "睡扬",
+	"RainBow": "虹"
+}
+
+var dic_dic: Dictionary[String, Dictionary] = {
+	"荧火light": {"yinghuolight": 18},
+	"没睡醒的扬": {"Shuiyang": 20}
+}
+
+func _ready() -> void:
+	# 获取键值
+	print(dic["yinghuolight"])
+	print(dic["Shuiyang"])
+	print(dic["RainBow"])
+	
+	print(dic_dic["荧火light"])
+	print(dic_dic["荧火light"]["yinghuolight"])
+	print(dic_dic["没睡醒的扬"])
+	print(dic_dic["没睡醒的扬"]["Shuiyang"])
+	
+	print()
+	
+	# 修改键值
+	dic["yinghuolight"] = "yhlight"
+	print(dic["yinghuolight"])
+	
+	dic_dic["荧火light"] = {"yhlight": 24}
+	print(dic_dic)
+	dic_dic["荧火light"]["yhlight"] = 18
+	print(dic_dic)
+	
+	print()
+	
+	# 新增键值对
+	dic["Snowie"] = "小雪"
+	print(dic["Snowie"])
+	print(dic)
+	
+	dic_dic["小雪"] = {"Snowie": 18}
+	print(dic_dic)
+	dic_dic["小雪"]["Light"] = 20
+	print(dic_dic) 
+	
+	print()
+	
+	# 使用erase()函数删除字典中的键值对
+	dic.erase("RainBow")
+	print(dic)
+	
+	dic_dic.erase("没睡醒的扬")
+	print(dic_dic)
+	dic_dic["小雪"].erase("Light")
+	print(dic_dic)
+	
+	print()
+	
+	# 使用for循环遍历时，将获取字典的键
+	for key in dic:
+		print(dic[key])
+		
+	print()
+	
+	var dic_dic_for: Dictionary[String, Dictionary] = {
+		"荧火light": {"yinghuolight": 18},
+		"没睡醒的扬": {"Shuiyang": 20},
+		"小雪": {"Snowie": 18, "Light": 24}
+	}
+	for key in dic_dic_for:
+		for key2 in dic_dic_for[key]:
+			print(dic_dic_for[key][key2])
+	
+	print()
+	
+	var dic_dic_dic: Dictionary[Dictionary, Dictionary] = {
+		{"荧火light": 18}: {"yinghuolight": 18},
+		{"没睡醒的扬": 20}: {"Shuiyang": 20},
+		{"小雪":18, "光": 24}: {"Snowie": 18, "Light": 24}
+	}
+	for key in dic_dic_dic:
+		# 获取key
+		print(key)
+		for key2 in key:
+			# 获取key字典的key
+			print(key2)
+			# 获取key字典的key的value
+			print(key[key2])
+			
+	print()
+	
+	for key in dic_dic_dic:
+		for key2 in dic_dic_dic[key]:
+			print(dic_dic_dic[key][key2])
+                    </code>
+                </pre>
+		</section>
+
+		<section>
+			<h2>字典常用方法</h2>
+			<p>字典常用方法.gd</p>
+			<pre class="code-block">
+                    <code>
+extends Node
+
+var dic: Dictionary[String, String] = {
+	"yinghuolight": "荧火light",
+	"Shuiyang": "睡扬",
+	"RainBow": "虹"
+}
+	
+var dic2: Dictionary[String, String] = {
+	"Snowie": "小雪",
+	"Jing": "静",
+	"Huanlaiting": "幻来听"
+}
+
+func _ready() -> void:
+	### 增
+	var dic_merge: Dictionary[String, String] = {
+		"yinghuolight": "荧火light",
+		"Shuiyang": "睡扬",
+		"RainBow": "虹"
+	}
+	
+	var dic_merge2: Dictionary[String, String] = {
+		"Snowie": "小雪",
+		"Jing": "静",
+		"Huanlaiting": "幻来听",
+		"yinghuolight": "yhlight"
+	}
+	
+	var dic_merge_copy: Dictionary[String, String]
+	
+	# 复制另一个字典中的键值对到本字典，默认不复制重复的键
+	# 如果overwrite为true，则会复制重复的键，由于键是唯一的，所以此操作实际是覆盖键值
+	# void merge(dictionary: Dictionary, overwrite: bool = false)
+	dic_merge.merge(dic_merge2, true)
+	print(dic_merge)
+	
+	# 合并两个字典，默认不合并重复的键
+	# Dictionary merged(dictionary: Dictionary, overwrite: bool = false)
+	dic_merge_copy = dic_merge.merged(dic_merge2, true)
+	print(dic_merge_copy)
+	
+	### 删
+	# 移除键名为key的键值对
+	# bool erase(key: Variant)
+	dic.erase("RainBow")
+	print(dic)
+	
+	# 清空字典
+	# void clear()
+	dic.clear()
+	print(dic)
+	dic = {
+		"yinghuolight": "荧火light",
+		"Shuiyang": "睡扬",
+		"RainBow": "虹"
+	}
+	
+	### 改
+	# 修改键名为key的字典元素
+	# bool set(key: Variant, value: Variant)
+	dic.set("yinghuolight", "yhlight")
+	print(dic)
+	
+	# 将另一个字典赋给本字典
+	# void assign(dictionary: Dictionary)
+	dic.assign(dic2)
+	print(dic)
+	
+	# 字典的排序
+	# 注意，比较的是键名而不是键值
+	# void sort()
+	var dic_sort: Dictionary[String, String] = {
+		"Snowie": "小雪",
+		"Jing": "静",
+		"Huanlaiting": "幻来听",
+		"yinghuolight": "yhlight"
+	}
+	dic_sort.sort()
+	print(dic_sort)
+	
+	### 查
+	# 获取字典的键值对对数
+	# int size()
+	print(dic.size())
+	
+	# 返回第一个键值为value的键
+	# Variant find_key(value: Variant)
+	print(dic.find_key("静"))
+	
+	# 返回字典中所有的键
+	# Array keys()
+	print(dic.keys())
+	
+	# 返回字典中所有的键值
+	# Array values()
+	print(dic.values())
+	
+	# 获取键名为key的键值
+	# 若key不存在，则返回default
+	# 若key存在，则返回相应的键值
+	# Variant get(key: Variant, default: Variant = null)
+	print(dic.get("Snowie"))
+	
+	# 获取键名为key的键值
+	# 若key不存在，则添加key-default的键值对至字典中并返回default
+	# 若key存在，则返回相应的键值
+	# Variant get_or_add(key: Variant, default: Variant = null)
+	printt(dic.get_or_add("void", "空"), dic)
+	
+	# 字典是否包含key
+	# bool has(key: Variant)
+	print(dic.has("void"))
+	
+	# 字典是否包含给定的key
+	# bool has_all(keys: Array)
+	print(dic.has_all(["Snowie", "Jing", "void"]))
+	
+	# 字典是否为空
+	# bool is_empty()
+	print(dic.is_empty())
+	
+	# 其他操作
+	# 返回本字典的副本
+	# Dictionary duplicate(deep: bool = false)
+	var dic_dic: Dictionary[String, Dictionary] = {
+		"荧火light": {"yinghuolight": 18},
+		"没睡醒的扬": {"Shuiyang": 20}
+	}
+	
+	var dic_dic_copy: Dictionary[String, Dictionary] = dic_dic.duplicate()
+	var dic_dic_copy_deep: Dictionary[String, Dictionary] = dic_dic.duplicate(true)
+	dic_dic_copy["荧火light"]["yinghuolight"] = 19
+	dic_dic_copy_deep["没睡醒的扬"]["Shuiyang"] = 22
+	print(dic_dic)
+	
+	# 使字典变为只读
+	# void make_read_only()
+	dic_dic.make_read_only()
+                    </code>
+                </pre>
+		</section>
+
+	</div>
+</div>
