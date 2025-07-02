@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>荧火光</title>
+</head>
+
+<body>
+    <input type="number" id="inputN" placeholder="请输入一个正整数" />
+    <button onclick="calculate()">计算</button>
+    <p id="result"></p>
+
+    <script>
+        class OddSumCalculator {
+            constructor(n) {
+                this.n = n;
+            }
+
+            calculateOddSum() {
+                let sum = 0;
+                for (let i = 1; i <= this.n; i++) {
+                    if (i % 2 !== 0) {
+                        sum += i;
+                    }
+                }
+                return sum;
+            }
+        }
+
+        function calculate() {
+            const input = document.getElementById("inputN").value;
+            const n = parseInt(input);
+            const resultEl = document.getElementById("result");
+
+            if (isNaN(n) || n <= 0) {
+                resultEl.textContent = "请输入一个正整数！";
+                return;
+            }
+
+            const calculator = new OddSumCalculator(n);
+            const result = calculator.calculateOddSum();
+            resultEl.textContent = `1 到 ${n} 的奇数和为：${result}`;
+        }
+    </script>
+</body>
+
+</html>

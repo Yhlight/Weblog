@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #todoApp {
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li.completed {
+            text-decoration: line-through;
+            color: gray;
+            background-color: #e0e0e0;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        .slider {
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todoApp">
+        <input type="text" id="todoInput" placeholder="输入新任务" />
+        <button onclick="addTodo()">添加</button>
+        <ul id="todoList"></ul>
+    </div>
+
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="./1e492a4ab72b48bd447e5050cbc81dca299415794.png" alt="图1" />
+            <img src="./1f3e64a0c33ac657e58d583b93c848c61715317124.jpg" alt="图2" />
+            <img src="./70a6be0e579a010958bfcb43edf7cced353403349.png" alt="图3" />
+        </div>
+        <div class="slider-buttons">
+            <button onclick="prev()">⟵</button>
+            <button onclick="next()">⟶</button>
+        </div>
+    </div>
+
+    <script>
+        const todos = [];
+
+        function renderTodos() {
+            const ul = document.getElementById("todoList");
+            ul.innerHTML = "";
+            todos.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = item.title;
+                li.className = item.completed ? "completed" : "";
+
+                li.onclick = () => {
+                    todos[index].completed = !todos[index].completed;
+                    renderTodos();
+                };
+
+                const delBtn = document.createElement("button");
+                delBtn.textContent = "删除";
+                delBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    todos.splice(index, 1);
+                    renderTodos();
+                };
+
+                li.appendChild(delBtn);
+                ul.appendChild(li);
+            });
+        }
+
+        function addTodo() {
+            const input = document.getElementById("todoInput");
+            const value = input.value.trim();
+            if (value) {
+                todos.push({ title: value, completed: false });
+                input.value = "";
+                renderTodos();
+            }
+        }
+
+        let currentIndex = 0;
+        const slides = document.getElementById("slides");
+        const totalSlides = slides.children.length;
+        let timer = null;
+
+        function updateSlide() {
+            slides.style.transform = `translateX(-${currentIndex * 500}px)`;
+        }
+
+        function next() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function prev() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        function AutoPlay() {
+            if (!timer) {
+                timer = setInterval(next, 3000);
+            }
+        }
+
+        function stopAutoPlay() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        const slider = document.querySelector(".slider");
+        slider.addEventListener("mouseenter", stopAutoPlay);
+        slider.addEventListener("mouseleave", AutoPlay);
+
+        AutoPlay();
+    </script>
+
+</body>
+
+</html>

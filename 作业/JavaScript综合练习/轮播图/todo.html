@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <ul id="todoListClass"></ul>
+
+    <script>
+        class Todo {
+            constructor() {
+                this.todoList = [
+                    { id: 1, title: "玩原神", isCompleted: false },
+                    { id: 2, title: "玩原神", isCompleted: true },
+                    { id: 3, title: "玩原神", isCompleted: false },
+                    { id: 4, title: "玩原神", isCompleted: true },
+                    { id: 5, title: "玩原神", isCompleted: false }
+                ];
+            }
+
+            add(title) {
+                const id = this.todoList.length > 0 ? this.todoList[this.todoList.length - 1].id + 1 : 1;
+                this.todoList.push({ id, title, isCompleted: false });
+            }
+
+            delete(id) {
+                this.todoList = this.todoList.filter(item => item.id !== id);
+            }
+
+            update(id, newTitle) {
+                const item = this.todoList.find(item => item.id === id);
+                if (item) item.title = newTitle;
+            }
+
+            toggle(id) {
+                const item = this.todoList.find(item => item.id === id);
+                if (item) item.isCompleted = !item.isCompleted;
+            }
+
+            getAll() {
+                return this.todoList;
+            }
+        }
+
+        const todoApp = new Todo();
+        todoApp.add("玩BH3");
+        todoApp.toggle(1);
+        todoApp.update(2, "玩BH2");
+        todoApp.delete(3);
+
+        const ul = document.getElementById("todoListClass");
+        todoApp.getAll().forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `${item.title} - ${item.isCompleted ? "已完成" : "未完成"}`;
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>

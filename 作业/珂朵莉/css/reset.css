@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.left_float {
+    float: left;
+}
+
+.right_float {
+    float: right;
+}
+
+.clear_float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.color_bold {
+    color: skyblue;
+    font-weight: bold;
+}

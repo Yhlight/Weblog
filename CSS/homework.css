@@ -1,0 +1,87 @@
+.homework-contain {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.homework-contain .homework-section {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.homework-contain .homework-section .homework-card {
+    flex: 0 0 20%;
+    width: 250px;
+    height: 250px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    position: relative;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 250px;
+}
+
+.homework-contain .homework-card a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.homework-contain .hide {
+    display: none;
+}
+
+.homework-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homework-screen .screen {
+    width: 90%;
+    height: 1080px;
+    border: 7px var(--dark-blue) solid;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 10px;
+}
+
+.homework-screen .close-button {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: 0.3s all linear;
+}
+
+.homework-screen .close-button:hover {
+    background-color: white;
+}
+
+.homework-screen .close-button i {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+.homework-screen .close-button i:hover {
+    color: var(--dark-blue);
+}

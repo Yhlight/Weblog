@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>荧火光</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 900px;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .left,
+        .right {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .left {
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .right {
+            background: #ecf0f1;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .calculator input {
+            grid-column: span 4;
+            height: 50px;
+            font-size: 1.5rem;
+            text-align: right;
+            padding-right: 10px;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .calculator button {
+            height: 50px;
+            font-size: 1.2rem;
+            border: none;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .calculator button:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left {
+                font-size: 2.5rem;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left" id="clock">00:00:00</div>
+        <div class="right">
+            <div class="calculator">
+                <input type="text" id="display" disabled />
+
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button onclick="append('/')">÷</button>
+
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button onclick="append('*')">×</button>
+
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button onclick="append('-')">−</button>
+
+                <button onclick="append('0')">0</button>
+                <button onclick="append('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="append('+')">+</button>
+
+                <button onclick="clearDisplay()" style="grid-column: span 4; background: red;">清除</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        const display = document.getElementById("display");
+
+        function append(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function calculate() {
+            display.value = eval(display.value);
+        }
+    </script>
+</body>
+
+</html>

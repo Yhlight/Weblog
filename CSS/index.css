@@ -38,11 +38,15 @@
 body {
     background: var(--background-light);
     color: var(--text-dark);
-    min-height: 100vh;
+    overflow: hidden scroll;
+}
+
+.screen {
+    min-height: 960px;
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .navbar {

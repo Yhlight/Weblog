@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荧火光</title>
+
+    <style>
+        .contain {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            font-size: 0px;
+        }
+
+        .contain.on-sale::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url(./FnD0lsRvvs-KAOOSEplA3qUDNtM_.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .contain.on-sale::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url(./FhVYO9E-f6pWmjcbHKIBrzZrkjZN.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .meun ul::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .meun ul li {
+            float: left;
+            margin-right: 30px;
+        }
+
+        .item {
+            position: fixed;
+            height: fit-content;
+            left: 0;
+            right: 0;
+            background-color: skyblue;
+            visibility: hidden;
+        }
+
+        .meun li:hover .item {
+            visibility: visible;
+        }
+
+        .hover {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+        }
+
+        .hover:hover::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-image: url(./FqBixArJ6S60bWwN5hr3qRJMciYl.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hover">
+        <img src="./Fh2scaNFdGi6d13919IqYs0SvEiZ.jpg" alt="">
+    </div>
+
+    <div class="contain on-sale">
+        <img src="./FsbUn_Yem9SCJ-XNMCF5GG05F5JY.jpg" alt="">
+    </div>
+
+    <div class="meun">
+        <ul>
+            <li>
+                <a href="">测试</a>
+
+                <div class="item">
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">测试</a>
+
+                <div class="item">
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">测试</a>
+
+                <div class="item">
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                </div>
+            </li>
+            <li>
+                <a href="#">测试</a>
+
+                <div class="item">
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">测试</a>
+
+                <div class="item">
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                    <div><a href="">总览</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

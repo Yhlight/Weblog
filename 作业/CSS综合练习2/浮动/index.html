@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荧火光</title>
+
+    <style>
+        .contain {
+            width: 400px;
+            height: fit-content;
+            margin-bottom: 50px;
+        }
+
+        .cricle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px red solid;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .cricle:nth-child(2n + 1) {
+            background-color: rgb(255, 192, 203);
+        }
+
+        .cricle:nth-child(2n) {
+            background-color: rgb(144, 144, 255);
+        }
+
+        .contain:nth-child(2)::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .contain:nth-child(2) * {
+            float: left;
+        }
+
+        .photo {
+            width: 100px;
+            height: 100px;
+            background-image: url(./die.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .cricle2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px red solid;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .cricle2:nth-child(2n + 1) {
+            background-color: rgb(255, 192, 203);
+        }
+
+        .cricle2:nth-child(2n) {
+            background-color: rgb(144, 144, 255);
+        }
+
+        .contain:nth-child(3) ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .contain:nth-child(3) li {
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            width: 100%;
+        }
+
+        .box::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .box * {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="cricle">1</div>
+        <div class="cricle">2</div>
+        <div class="cricle">3</div>
+        <div class="cricle">4</div>
+        <div class="cricle">5</div>
+        <div class="cricle">6</div>
+        <div class="cricle">7</div>
+        <div class="cricle">8</div>
+        <div class="cricle">9</div>
+        <div class="cricle">10</div>
+        <div class="cricle">11</div>
+        <div class="cricle">12</div>
+        <div class="cricle">13</div>
+        <div class="cricle">14</div>
+        <div class="cricle">15</div>
+        <div class="cricle">16</div>
+        <div class="cricle">17</div>
+        <div class="cricle">18</div>
+        <div class="cricle">19</div>
+        <div class="cricle">20</div>
+    </div>
+
+    <div class="contain">
+        <div class="cricle2">1</div>
+        <div class="cricle2">2</div>
+        <div class="cricle2">3</div>
+        <div class="cricle2">4</div>
+        <div class="cricle2">5</div>
+        <div class="cricle2">6</div>
+        <div class="photo"></div>
+        <div class="cricle2">7</div>
+        <div class="cricle2">8</div>
+        <div class="cricle2">9</div>
+        <div class="cricle2">10</div>
+        <div class="cricle2">11</div>
+        <div class="cricle2">12</div>
+        <div class="cricle2">13</div>
+
+        <div class="cricle2">14</div>
+        <div class="cricle2">15</div>
+        <div class="cricle2">16</div>
+        <div class="cricle2">17</div>
+        <div class="cricle2">18</div>
+        <div class="cricle2">19</div>
+        <div class="cricle2">20</div>
+    </div>
+
+    <div class="contain">
+        <ul>
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+
+            <li>
+                <div class="photo"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <div>1145</div>
+        <div>19810</div>
+        <div>99100</div>
+    </div>
+</body>
+
+</html>

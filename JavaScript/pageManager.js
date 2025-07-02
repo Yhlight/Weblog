@@ -13,6 +13,9 @@ YhLightApp.pageManager = {
                         case "main":
                             YhLightApp.mainManager.init();
                             break;
+                        case "homework":
+                            YhLightApp.homeworkManager.init();
+                            break;
                         case "note":
                             YhLightApp.noteManager.init();
                             break;

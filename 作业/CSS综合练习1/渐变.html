@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荧火光</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to bottom right, rgb(255, 166, 174), rgb(255, 192, 203), #A4C4D9, rgb(150, 224, 245), #D3B7F0, #B18BE4);
+            background-attachment: fixed;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box:nth-of-type(1) {
+            background-image: radial-gradient(#ffcc00, #ff6600, red);
+            border-radius: 50%;
+        }
+
+        .box:nth-of-type(2) {
+            background-image: repeating-linear-gradient(to right top, skyblue, violet 80px, pink);
+        }
+
+        .box:nth-of-type(3) {
+            background-image: repeating-radial-gradient(skyblue, violet, pink 10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+
+</html>

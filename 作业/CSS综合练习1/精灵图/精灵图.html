@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>荧火光</title>
+    <meta charset="UTF-8">
+
+    <style>
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 290px;
+            height: auto;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .box-list li {
+            width: 48px;
+            height: 70px;
+            float: left;
+            margin: 0 11px;
+            text-align: center;
+        }
+
+        .box-list li:first-child {
+            margin-left: 16px;
+        }
+
+        .box-list:first-child {
+            margin-top: 16px;
+        }
+
+        .box-list:nth-child(2) {
+            margin: 17px 0;
+        }
+
+        .box-list li .picture {
+            width: 48px;
+            height: 48px;
+            background-image: url(./精灵图.png);
+        }
+
+        .box-list:nth-child(1) li:nth-child(1) .picture {
+            background-position: 0 0;
+        }
+
+        .box-list:nth-child(1) li:nth-child(2) .picture {
+            background-position: -48px 0;
+        }
+
+        .box-list:nth-child(1) li:nth-child(3) .picture {
+            background-position: -96px 0;
+        }
+
+        .box-list:nth-child(1) li:nth-child(4) .picture {
+            background-position: -144px 0;
+        }
+
+        .box-list:nth-child(2) li:nth-child(1) .picture {
+            background-position: 0 -48px;
+        }
+
+        .box-list:nth-child(2) li:nth-child(2) .picture {
+            background-position: -48px -48px;
+        }
+
+        .box-list:nth-child(2) li:nth-child(3) .picture {
+            background-position: -96px -48px;
+        }
+
+        .box-list:nth-child(2) li:nth-child(4) .picture {
+            background-position: -144px -48px;
+        }
+
+        .box-list:nth-child(3) li:nth-child(1) .picture {
+            background-position: 0 -96px;
+        }
+
+        .box-list:nth-child(3) li:nth-child(2) .picture {
+            background-position: -48px -96px;
+        }
+
+        .box-list:nth-child(3) li:nth-child(3) .picture {
+            background-position: -96px -96px;
+        }
+
+        .box-list:nth-child(3) li:nth-child(4) .picture {
+            background-position: -144px -96px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="box-list">
+            <!-- 使用精灵图，减少网络请求 -->
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+        </ul>
+        <ul class="box-list">
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+        </ul>
+        <ul class="box-list">
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+            <li>
+                <div class="picture"></div>
+                <span>话费</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

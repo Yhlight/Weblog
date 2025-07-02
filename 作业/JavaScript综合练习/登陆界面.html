@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <label for="username">用户名：</label>
+    <input type="text" id="username" placeholder="请输入用户名" />
+    <button id="loginBtn">登录</button>
+
+    <script>
+        function isValidUsername(username) {
+            const pattern = /^[a-zA-Z_][a-zA-Z0-9_]{5,15}$/;
+            return pattern.test(username);
+        }
+
+        document.getElementById("loginBtn").addEventListener("click", function () {
+            const usernameInput = document.getElementById("username");
+            const username = usernameInput.value.trim();
+
+            if (!isValidUsername(username)) {
+                alert("用户名必须是6-16位的字母、数字、下划线组成，且第一位不能是数字！");
+            }
+        });
+    </script>
+</body>
+
+</html>

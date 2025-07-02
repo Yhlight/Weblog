@@ -1,0 +1,204 @@
+body {
+    background-image: url(../photo/珂朵莉.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    line-height: 1.6;
+    overflow: auto;
+    color: white;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.left_bar {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogue {
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+.catalogue h3 {
+    color: rgb(0, 177, 247);
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    height: 50px;
+}
+
+.catalogue ul {
+    margin: 0;
+    padding: 0;
+}
+
+.catalogue li {
+    list-style: none;
+    width: 180px;
+    height: fit-content;
+}
+
+.catalogue li a {
+    display: block;
+    width: 130px;
+    height: fit-content;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin: 0 auto;
+    border-left: 2px solid #ccc;
+    transition: all 0.08s ease;
+}
+
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+#info .happiest_girl {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#info .happiest_girl div {
+    font-size: 2rem;
+}
+
+#info .info_card {
+    font-size: 1.2rem;
+}
+
+#info .info_card div {
+    margin: 0.5rem auto;
+}
+
+.title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#characters_story,
+#author,
+#education,
+#moe_war,
+#keduoli {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+}
+
+#characters_story {
+    color: lightblue;
+}
+
+#characters_story h4 {
+    margin-bottom: 0.05rem;
+    color: white;
+}
+
+.role_dialogue {
+    width: 80%;
+    height: 100px;
+    border-left: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    line-height: 60px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-style: oblique;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#characters_story .ariel {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+#moe_war table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#moe_war td {
+    width: 20%;
+}
+
+#moe_war .left_box {
+    width: 20%;
+    height: 550px;
+}
+
+#moe_war .right_box {
+    width: 80%;
+    height: 550px;
+}
+
+#moe_war .record {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#moe_war .record img {
+    width: 100px;
+    height: auto;
+}
+
+#keduoli .keduoli_photos {
+    column-count: 3;
+}
+
+#keduoli .keduoli_photos img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 5px;
+}
+
+.bgc_add {
+    background-color: rgba(135, 207, 235, 0.6);
+    border-color: deepskyblue !important;
+}
